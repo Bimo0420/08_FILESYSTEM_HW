@@ -11,21 +11,22 @@ namespace N2 //Программно создайте текстовый файл
     {
         static void Main(string[] args)
         {
-            string path = @"C:\Temp\Task02.txt ";
+            string path = @"C:\Temp\Task02.txt";
             Random rand = new Random();
-            using (StreamWriter sw = new StreamWriter(path, false)) //создание файла с 10 числами
-            {
-                for (int i = 0; i < 10; i++)
+            using (StreamWriter sw = new StreamWriter(path, false)) //создание файла 
+            
+                for (int i = 0; i < 10; i++)    //создание чисел
                 {
                     sw.WriteLine(rand.Next(1,10));
                 }
-                Console.WriteLine(rand);
-            }
+                
+            
             int result = 0;
-            using (StreamReader sr = new StreamReader(path))
-            {
-                result += Convert.ToInt32(sr.ReadLine());
-            }
+            using (StreamReader sr = new StreamReader(path)) //открытие файла
+                for (int i = 0; i < 10; i++)//получение суммы
+                {
+                result += Convert.ToInt32(sr.ReadLine()); 
+                }
             Console.WriteLine(result);
             Console.ReadKey();
                       
